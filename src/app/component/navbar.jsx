@@ -1,5 +1,8 @@
+import Link from "next/link";
+
 export default function Navbar() {
     return(
+      <div className="container">
         <div className="d-flex justify-content-between align-items-center m-3">
       <div className="d-flex align-items-center">
         <img src="logo.png" alt="Logo" width={90} height={80} className="rounded-circle me-2" />
@@ -8,9 +11,9 @@ export default function Navbar() {
       <div className="d-flex align-items-center">
         {/* Desktop navigation */}
         <nav className="d-none d-lg-flex gap-3">
-          <a className="nav-link text-dark" href="/">Anasayfa</a>
-          <a className="nav-link text-dark" href="#pots">Postlar</a>
-          <a className="nav-link text-dark" href="#iletisim">İletişim</a>
+          <Link className="nav-link text-dark" href="/">Anasayfa</Link>
+          <Link className="nav-link text-dark" href="#pots">Postlar</Link>
+          <Link className="nav-link text-dark" href="#iletisim">İletişim</Link>
         </nav>
         {/* Mobile button */}
         <button className="d-sm-block d-lg-none ms-3 btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu">
@@ -27,17 +30,18 @@ export default function Navbar() {
         <div className="offcanvas-body">
           <ul className="nav flex-column">
             <li className="nav-item">
-              <a className="nav-link text-dark" href="">Anasayfa</a>
+              <Link className="nav-link text-dark" href="">Anasayfa</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-dark" href="">Postlar</a>
+              <Link className="nav-link text-dark" href="">Postlar</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-dark" href="">İletişim</a>
+              <Link className="nav-link text-dark" href="">İletişim</Link>
             </li>
           </ul>
         </div>
       </div>
+    </div>
     </div>
     )
 }

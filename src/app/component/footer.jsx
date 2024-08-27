@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FaInstagram, FaEnvelope } from 'react-icons/fa';
 
 export default function Footer() {
@@ -15,19 +16,19 @@ export default function Footer() {
     
                 {/* Sosyal Medya ve İletişim */}
                 <div className="col-md-6 d-flex flex-column flex-md-row align-items-center  mb-4 mb-md-0">
-                  <a href="https://www.instagram.com/caridinathehouse/" className="text-dark me-3 d-flex align-items-center" aria-label="Instagram">
+                  <Link href="https://www.instagram.com/caridinathehouse/" className="text-dark me-3 d-flex align-items-center" aria-label="Instagram">
                     <FaInstagram size={24} className="me-2" />
                     <span>Instagram hesabımızı ziyaret edin</span>
-                  </a>
-                  <a href="mailto:selimkocesved@gmail.com" className="text-dark d-flex align-items-center" aria-label="Email">
+                  </Link>
+                  <Link href="mailto:selimkocesved@gmail.com" className="text-dark d-flex align-items-center" aria-label="Email">
                     <FaEnvelope size={24} className="me-2" />
                     <span>Bana ulaşın</span>
-                  </a>
+                  </Link>
                 </div>
     
                 {/* Site Bilgileri */}
                 <div className="col-md-6 text-center text-md-end">
-                  <p className="text-dark">&copy; {new Date().getFullYear()} CaridinaTheHouse. Tüm Hakları Saklıdır.</p>
+                  <p className="text-dark">&copy; 2024 CaridinaTheHouse. Tüm Hakları Saklıdır.</p>
                 </div>
               </div>
             </div>
