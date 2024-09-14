@@ -1,7 +1,18 @@
+"use client";
+
 import data from '../../Json/data.json';
 import { notFound } from 'next/navigation';
+import { useEffect } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function ProductDetailsPage({ params }) {
+    useEffect(() => {
+        // Bootstrap JavaScript dosyası sadece client-side'da çalışsın
+        if (typeof document !== "undefined") {
+          require('bootstrap/dist/js/bootstrap.bundle.min.js');
+        }
+      }, []);
+
     const { slug } = params;
     const product = data.find(item => item.slug === slug);
 
