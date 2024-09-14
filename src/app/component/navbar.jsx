@@ -15,37 +15,27 @@ export default function Navbar() {
       const handleLinkClick = (event) => {
         const clickedElement = event.target;
 
-        // Postlar menüsüne tıklanırsa menüyü açma veya kapalı tutma
+        // "Postlar" menüsüne tıklanırsa menüyü açma veya kapalı tutma
         const isPostMenu = clickedElement.closest('.nav-item.dropdown');
         if (isPostMenu) {
-          // Postlar menüsüne tıklanırsa hiçbir şey yapma
           return;
         }
 
-        // Postlar menüsündeki bağlantılara tıklanırsa menüyü kapat
+        // Dropdown menüsündeki bağlantılara tıklanırsa menüyü kapat
         const isDropdownLink = clickedElement.closest('.dropdown-menu a');
         if (isDropdownLink) {
           offcanvas.hide();
-        }
-
-        // Diğer menü bağlantılarına tıklanırsa menüyü kapat
-        const isOtherLink = clickedElement.closest('.nav-link');
-        if (isOtherLink && !isDropdownLink) {
+        } else if (clickedElement.closest('.nav-link')) {
           offcanvas.hide();
         }
       };
 
       // Menü içindeki linklere tıklama olayını dinle
-      const allLinks = offcanvasElement.querySelectorAll('.nav-link, .dropdown-menu a');
-      allLinks.forEach(link => {
-        link.addEventListener('click', handleLinkClick);
-      });
+      offcanvasElement.addEventListener('click', handleLinkClick);
 
       // Cleanup: bileşen kaldırıldığında event listener'ları temizle
       return () => {
-        allLinks.forEach(link => {
-          link.removeEventListener('click', handleLinkClick);
-        });
+        offcanvasElement.removeEventListener('click', handleLinkClick);
       };
     }
   }, []);
@@ -55,7 +45,7 @@ export default function Navbar() {
       <div className="d-flex justify-content-between align-items-center m-3">
         <div className="d-flex align-items-center justify-content-start">
           <img src="/logo.png" alt="Logo" className="mb-2" style={{ width: '70px', height: '60px' }} />
-          <h1 className="mb-0 ms-2" style={{ fontSize: '1.5rem' }}>CaridinaTheHouse</h1>
+          <h1 className="mb-0" style={{ fontSize: '1.5rem' }}>CaridinaTheHouse</h1>
         </div>
 
         <div className="d-flex align-items-center">
