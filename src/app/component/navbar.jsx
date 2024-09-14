@@ -6,31 +6,45 @@ import data from '../Json/data.json';
 
 export default function Navbar() {
   useEffect(() => {
-    // Bu kod sadece tarayıcıda çalışacak
     if (typeof window !== 'undefined') {
       const bootstrap = require('bootstrap/dist/js/bootstrap.bundle.min.js');
 
-      // Offcanvas içerik linklerine tıklanıldığında kapatma
       const offcanvasElement = document.getElementById('offcanvasMenu');
       const offcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasElement);
 
-      const handleDropdownItemClick = (event) => {
-        const isPostDropdownItem = event.target.closest('.dropdown-menu'); // Eğer tıklanan dropdown içindeyse kapansın
-        if (isPostDropdownItem) {
+      const handleLinkClick = (event) => {
+        const clickedElement = event.target;
+
+        // Postlar menüsüne tıklanırsa menüyü açma veya kapalı tutma
+        const isPostMenu = clickedElement.closest('.nav-item.dropdown');
+        if (isPostMenu) {
+          // Postlar menüsüne tıklanırsa hiçbir şey yapma
+          return;
+        }
+
+        // Postlar menüsündeki bağlantılara tıklanırsa menüyü kapat
+        const isDropdownLink = clickedElement.closest('.dropdown-menu a');
+        if (isDropdownLink) {
+          offcanvas.hide();
+        }
+
+        // Diğer menü bağlantılarına tıklanırsa menüyü kapat
+        const isOtherLink = clickedElement.closest('.nav-link');
+        if (isOtherLink && !isDropdownLink) {
           offcanvas.hide();
         }
       };
 
-      // Yalnızca dropdown menu içindeki linklere tıklama olayını dinle
-      const dropdownLinks = offcanvasElement.querySelectorAll('.dropdown-menu a');
-      dropdownLinks.forEach(link => {
-        link.addEventListener('click', handleDropdownItemClick);
+      // Menü içindeki linklere tıklama olayını dinle
+      const allLinks = offcanvasElement.querySelectorAll('.nav-link, .dropdown-menu a');
+      allLinks.forEach(link => {
+        link.addEventListener('click', handleLinkClick);
       });
 
       // Cleanup: bileşen kaldırıldığında event listener'ları temizle
       return () => {
-        dropdownLinks.forEach(link => {
-          link.removeEventListener('click', handleDropdownItemClick);
+        allLinks.forEach(link => {
+          link.removeEventListener('click', handleLinkClick);
         });
       };
     }
@@ -39,10 +53,10 @@ export default function Navbar() {
   return (
     <div className="container">
       <div className="d-flex justify-content-between align-items-center m-3">
-      <div className="d-flex align-items-center justify-content-start">
-  <img src="/logo.png" alt="Logo" className="mb-2" style={{ width: '70px', height: '60px' }} />
-  <h1 className="mb-0 ms-2" style={{ fontSize: '1.5rem' }}>CaridinaTheHouse</h1>
-</div>
+        <div className="d-flex align-items-center justify-content-start">
+          <img src="/logo.png" alt="Logo" className="mb-2" style={{ width: '70px', height: '60px' }} />
+          <h1 className="mb-0 ms-2" style={{ fontSize: '1.5rem' }}>CaridinaTheHouse</h1>
+        </div>
 
         <div className="d-flex align-items-center">
           {/* Desktop navigation */}
@@ -71,7 +85,7 @@ export default function Navbar() {
                 <Link className="nav-link text-dark" href="/">Anasayfa</Link>
               </li>
               <li className="nav-item dropdown">
-                <Link className="nav-link text-dark dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">Postlar</Link>
+                <Link className="nav-link text-dark dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Postlar</Link>
                 <div className="dropdown-menu">
                   <div className="d-flex gap-3 flex-column">
                     {data.map((product, index) => (
