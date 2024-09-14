@@ -16,7 +16,7 @@ export default function Footer() {
     
                 {/* Sosyal Medya ve İletişim */}
                 <div className="col-md-6 d-flex flex-column flex-md-row align-items-center  mb-4 mb-md-0">
-                  <Link href="https://www.instagram.com/caridinathehouse/" className="text-dark me-3 d-flex align-items-center" aria-label="Instagram">
+                  <Link href="https://www.instagram.com/caridinathehouse/" target='_blank' className="text-dark me-3 d-flex align-items-center" aria-label="Instagram">
                     <FaInstagram size={24} className="me-2" />
                     <span>Instagram hesabımızı ziyaret edin</span>
                   </Link>

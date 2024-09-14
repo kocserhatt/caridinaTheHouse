@@ -14,7 +14,7 @@ export function Header() {
 
   return (
     <>
-      <div id="carouselExample" className="carousel slide">
+      <div id="carouselExample" className="carousel slide" data-bs-interval="3000">
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img src="/img3.jpg" className="d-block w-100" alt="Slide 1" />
