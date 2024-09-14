@@ -23,7 +23,7 @@ export default function Navbar() {
         {/* Desktop navigation */}
         <nav className="d-none d-lg-flex gap-3">
           <Link className="nav-link text-dark" href="/">Anasayfa</Link>
-          <Link className="nav-link text-dark" href="#pots">Postlar</Link>
+          <Link className="nav-link text-dark" href="#post">Postlar</Link>
           <Link className="nav-link text-dark" href="#iletisim">İletişim</Link>
         </nav>
         {/* Mobile button */}
@@ -53,7 +53,7 @@ export default function Navbar() {
                     <div className="" key={index}>
                       <div className="">
                         <div className="">
-                          <Link href={`/urunler/${product.slug}`} legacyBehavior>
+                          <Link href={`/post/${product.slug}`} legacyBehavior>
                             <a className="text-decoration-none text-dark"> <img src="/right-arrow.png" alt="" width={12} height={12} /> {product.title}</a>
                           </Link>
                         </div>

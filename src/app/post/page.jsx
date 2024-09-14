@@ -7,7 +7,7 @@ export default function ProductPage() {
   return (
     <>
       <Header />
-      <div id='pots'></div>
+      <div id='post'></div>
       <div className="container">
         <div className="row g-3">
           {data.map((product, index) => (
@@ -21,7 +21,7 @@ export default function ProductPage() {
                 />
                 <div className="card-body">
                   <h5 className="card-title">{product.title}</h5>
-                  <Link href={`/urunler/${product.slug}`} legacyBehavior>
+                  <Link href={`/post/${product.slug}`} legacyBehavior>
                     <a className="btn btn-primary">Detayı Göster</a>
                   </Link>
                 </div>
