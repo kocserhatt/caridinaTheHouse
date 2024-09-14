@@ -22,7 +22,7 @@ export default function ProductPage() {
                 <div className="card-body">
                   <h5 className="card-title">{product.title}</h5>
                   <Link href={`/post/${product.slug}`} legacyBehavior>
-                      <button className="btn btn-primary btn-sm">Detayı Göster</button>
+                      <button style={{width: '50%', height: '40px'}} className="btn border border-none">Detayı Göster</button>
                   </Link>
 
                 </div>
