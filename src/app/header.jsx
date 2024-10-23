@@ -16,8 +16,8 @@ export function Header() {
   return (
     <>
     <Head>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4900925252983916"
-            crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4900925252983916"
+     crossorigin="anonymous"></script>
       </Head>
       <div id="carouselExample" className="carousel slide" data-bs-interval="3000">
         <div className="carousel-inner">
