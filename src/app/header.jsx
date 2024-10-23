@@ -2,7 +2,6 @@
 
 import { useEffect } from "react";
 import "./header.css";
-import Head from 'next/head';
 import 'bootstrap/dist/css/bootstrap.min.css'; // CSS sadece stil amaçlı, sunucu tarafında da yüklenebilir.
 
 export function Header() {
@@ -11,14 +10,13 @@ export function Header() {
     if (typeof window !== 'undefined') {
       require('bootstrap/dist/js/bootstrap.bundle.min.js');
     }
+
+    // AdSense kodunu yükleme
+    (window.adsbygoogle = window.adsbygoogle || []).push({});
   }, []);
 
   return (
     <>
-    <Head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4900925252983916"
-     crossorigin="anonymous"></script>
-      </Head>
       <div id="carouselExample" className="carousel slide" data-bs-interval="3000">
         <div className="carousel-inner">
           <div className="carousel-item active">
@@ -40,6 +38,17 @@ export function Header() {
           <span className="visually-hidden">Next</span>
         </button>
       </div>
+
+      {/* AdSense Reklam Kodu */}
+      <div className="container my-5">
+        <ins className="adsbygoogle"
+          style={{ display: "block" }}
+          data-ad-client="ca-pub-4900925252983916"
+          data-ad-slot="1897429896"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      </div>
+
       <div className="container mb-5 mt-5">
         <div id="anasayfa" className="home">
           <div className="left">
