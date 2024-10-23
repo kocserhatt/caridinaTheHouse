@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import "./header.css";
+import Head from 'next/head';
 import 'bootstrap/dist/css/bootstrap.min.css'; // CSS sadece stil amaçlı, sunucu tarafında da yüklenebilir.
 
 export function Header() {
@@ -14,6 +15,10 @@ export function Header() {
 
   return (
     <>
+    <Head>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4900925252983916"
+            crossorigin="anonymous"></script>
+      </Head>
       <div id="carouselExample" className="carousel slide" data-bs-interval="3000">
         <div className="carousel-inner">
           <div className="carousel-item active">
