@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Header } from '../header';
 import data from '../Json/data.json';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "@/app/header.css";
 
 export default function ProductPage() {
   return (
