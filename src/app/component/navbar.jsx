@@ -58,7 +58,7 @@ export default function Navbar() {
           {/* Desktop navigation */}
           <nav className="d-none d-lg-flex gap-3">
             <Link className="nav-link text-dark" href="/" onClick={handleMenuClose}>Anasayfa</Link>
-            <Link className="nav-link text-dark" href="#post" onClick={handleMenuClose}>Postlar</Link>
+            <Link className="nav-link text-dark" href="#post" onClick={handleMenuClose}>Karidesler Hakkında</Link>
             <Link className="nav-link text-dark" href="#iletisim" onClick={handleMenuClose}>İletişim</Link>
           </nav>
           {/* Mobile button */}
