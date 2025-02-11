@@ -100,7 +100,7 @@ export default function Navbar() {
                   aria-expanded="false" 
                   onClick={handlePostDropdownClick}
                 >
-                  Postlar
+                  Karidesler Hakkında
                 </Link>
                 <div className="dropdown-menu">
                   <div className="d-flex gap-3 flex-column">
