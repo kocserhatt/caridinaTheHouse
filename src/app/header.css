@@ -1,115 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Oswald:wght@200..700&family=Pacifico&family=Protest+Strike&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap');
 
+.caridina {
+    font-family: "Pacifico", cursive;
+    font-weight: 600;  /* Kalın font */
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: black;
+}
 
+.logo {
+    width: 70px;
+    height: 60px;
+}
 
+/* header.css */
+#carouselExample {
+    max-width: 80%; /* Boyutunu küçültmek için */
+    margin: 0 auto; /* Ortalamak için */
+    border-radius: 15px; /* Köşeleri oval yapmak için */
+    overflow: hidden; /* Kenarlarda taşma olmaması için */
+}
 
-@media (width <= 768px) {
+.carousel-inner {
+    border-radius: 15px; /* İçindeki resimler de oval olacak */
+}
+
+.carousel-item img {
+    border-radius: 15px; /* Resimlerin de oval olması için */
+}
+
+@media (max-width: 768px) {
     /* navbar */
-    .items{
+    .items {
         gap: 20px;
     }
-    .menu{
+    .menu {
         display: none;
     }
-
-    .navbar{
+    .navbar {
         margin-inline: 30px;
     }
-
-    .name{
+    .name {
         font-size: 25px;
     }
-    /* navbar end */}
+    /* navbar end */
+    .caridina {
+        font-size: 30px;
+    }
+    #carouselExample {
+        max-width: 100%;
+    }
+}
 
-    @media (width <= 475px) {
-        /* navbar */
-        .items{display: none;}
-
-        .menu{
-            display: block;
-        }
-        .navbar{
-            margin-inline: 30px;
-        }
-    
-        /* navbar end */}
-
-        .home{
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-        
-        .left{
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            justify-content: center;
-        }
-        
-        .home-span{
-            color: #457B9D;
-            font-size: 24px;
-            font-weight: 400;
-        }
-        
-        .home-header{
-            color: #000;
-            font-size: 48px;
-            font-weight: 700;
-        }
-        
-        .home-paragraph{
-            color: rgba(0, 0, 0, 0.80);
-            font-size: 20px;
-            font-weight: 400;
-        }
-        
-        .btns{
-            margin-top: 32px;
-            display: flex;
-            gap: 20px;
-        }
-        
-        .btn{
-            color: #FFF;
-            font-size: 20px;
-            font-weight: 400;
-            border-radius: 5px;
-            background: #457B9D;
-            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-            padding: 20px 70px;
-        }
-        
-        .btn-ghost{
-            border: 1px solid #457B9D;
-            background: rgba(69, 123, 157, 0.10);
-            color: #457B9D;
-        }
-        
-        .right{
-            width: 40%;
-            object-fit: cover;
-            
-        }
-        /* home end */
-        
-        @media (width <= 475px) {
-            /* home */
-        
-            .home-header{
-                font-size: 26px;
-            }
-        
-            .home-paragraph{
-                font-size: 16px;
-                
-            }
-        
-            /* home end */}
-
-            .carousel-item img {
-                width: 100%;
-                height: auto;
-                object-fit: cover;
-              }
-              
+@media (max-width: 475px) {
+    /* navbar */
+    .items {
+        display: none;
+    }
+    .menu {
+        display: block;
+    }
+    .navbar {
+        margin-inline: 30px;
+    }
+    /* navbar end */
+    .home {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+    .left {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        justify-content: center;
+    }
+    .home-span {
+        color: #457B9D;
+        font-size: 24px;
+        font-weight: 400;
+    }
+    .home-header {
+        color: #000;
+        font-size: 26px;
+        font-weight: 700;
+    }
+    .home-paragraph {
+        color: rgba(0, 0, 0, 0.80);
+        font-size: 16px;
+        font-weight: 400;
+    }
+    .btns {
+        margin-top: 32px;
+        display: flex;
+        gap: 20px;
+    }
+    .btn {
+        color: #FFF;
+        font-size: 20px;
+        font-weight: 400;
+        border-radius: 5px;
+        background: #457B9D;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        padding: 20px 70px;
+    }
+    .btn-ghost {
+        border: 1px solid #457B9D;
+        background: rgba(69, 123, 157, 0.10);
+        color: #457B9D;
+    }
+    .right {
+        width: 40%;
+        object-fit: cover;
+    }
+    .carousel-item img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+}

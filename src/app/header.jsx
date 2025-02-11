@@ -10,14 +10,11 @@ export function Header() {
     if (typeof window !== 'undefined') {
       require('bootstrap/dist/js/bootstrap.bundle.min.js');
     }
-
-    // AdSense kodunu yükleme
-    (window.adsbygoogle = window.adsbygoogle || []).push({});
   }, []);
 
   return (
     <>
-      <div id="carouselExample" className="carousel slide" data-bs-interval="3000">
+      <div id="carouselExample" className="carousel slide" data-bs-interval="5000">
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img src="/img3.jpg" className="d-block w-100" alt="Slide 1" />
@@ -26,7 +23,7 @@ export function Header() {
             <img src="/img1.jpg" className="d-block w-100" alt="Slide 2" />
           </div>
           <div className="carousel-item">
-            <img src="/img2.jpg" className="d-block w-100" alt="Slide 3" />
+            <img src="/img7.jpg" className="d-block w-100" alt="Slide 3" />
           </div>
         </div>
         <button className="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -37,16 +34,6 @@ export function Header() {
           <span className="carousel-control-next-icon" aria-hidden="true"></span>
           <span className="visually-hidden">Next</span>
         </button>
-      </div>
-
-      {/* AdSense Reklam Kodu */}
-      <div className="container my-5">
-        <ins className="adsbygoogle"
-          style={{ display: "block" }}
-          data-ad-client="ca-pub-4900925252983916"
-          data-ad-slot="1897429896"
-          data-ad-format="auto"
-          data-full-width-responsive="true"></ins>
       </div>
 
       <div className="container mb-5 mt-5">

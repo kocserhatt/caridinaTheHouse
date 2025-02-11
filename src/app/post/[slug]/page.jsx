@@ -36,13 +36,10 @@ export default function ProductDetailsPage({ params }) {
                         boxShadow: '0 4px 8px rgba(0,0,0,0.2)' // Hafif gölge efekti
                     }} 
                 />
-                <p style={{ 
-                    fontSize: '1rem', 
-                    lineHeight: '1.6', 
-                    color: '#555' 
-                }}>
-                    {product.description}
-                </p>
+               <div 
+                    className="product-description"
+                    dangerouslySetInnerHTML={{ __html: product.description }}
+                />
             </div>
         </div>
     );
