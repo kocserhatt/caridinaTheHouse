@@ -29,6 +29,37 @@
     border-radius: 15px; /* Resimlerin de oval olması için */
 }
 
+.btnn {
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: 2px solid #007BFF;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    transition: all 0.3s ease;
+    margin: 0 auto;
+    display: inline-block;
+
+    text-align: center;
+  }
+  
+  .btnn:hover {
+    background-color: transparent;
+    color: #007BFF;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+  }
+  
+  .btnn:active {
+    transform: translateY(2px);
+  }
+  
+  
+
 @media (max-width: 768px) {
     /* navbar */
     .items {
@@ -89,25 +120,6 @@
         color: rgba(0, 0, 0, 0.80);
         font-size: 16px;
         font-weight: 400;
-    }
-    .btns {
-        margin-top: 32px;
-        display: flex;
-        gap: 20px;
-    }
-    .btnn {
-        color: #FFF;
-        font-size: 20px;
-        font-weight: 400;
-        border-radius: 5px;
-        background: #457B9D;
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        padding: 20px 70px;
-    }
-    .btnn-ghost {
-        border: 1px solid #457B9D;
-        background: rgba(69, 123, 157, 0.10);
-        color: #457B9D;
     }
     .right {
         width: 40%;
