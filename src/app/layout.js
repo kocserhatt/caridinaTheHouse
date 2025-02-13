@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import Head from 'next/head';
-import Script from 'next/script'; // Script bileşeni eklendi
+import Script from 'next/script';
 import "./globals.css";
 import Navbar from "./component/navbar";
 import Footer from "./component/footer";
@@ -21,6 +21,8 @@ export default function RootLayout({ children }) {
         <meta name="description" content={metadata.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        {/* Google AdSense Meta Tag */}
+        <meta name="google-adsense-account" content="ca-pub-4900925252983916" />
       </Head>
       {/* Google AdSense Script */}
       <Script
